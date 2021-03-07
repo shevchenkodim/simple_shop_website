@@ -1,4 +1,4 @@
-import { axiosGet } from '@/utils'
+import categories from '@/api/categories'
 
 export default {
   namespaced: true,
@@ -48,7 +48,7 @@ export default {
     async fetchAllCategories ({ commit }) {
       commit('updateCategoriesLoading', true)
 
-      await axiosGet('/api/v1/categories')
+      await categories.getCategories()
         .then(({ data }) => {
           commit('updateCategories', data)
         })
@@ -62,7 +62,7 @@ export default {
     async fetchCategory ({ commit }, categoryID) {
       commit('updateCategoryLoading', true)
 
-      await axiosGet(`/api/v1/categories/${categoryID}`)
+      await categories.getCategory(categoryID)
         .then(({ data }) => {
           commit('updateCategory', data)
         })

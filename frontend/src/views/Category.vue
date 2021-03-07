@@ -5,10 +5,10 @@
 
     <div v-if="!isCategoryLoading">
       <el-row>
-        <el-col :span="6">
+        <el-col :span="6" type="flex">
           <el-image class="image"
                     :src="getCategory.image"
-                    style="height: 200px; width: auto;"
+                    style="height: 200px;"
           >
           </el-image>
         </el-col>

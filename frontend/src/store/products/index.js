@@ -1,4 +1,4 @@
-import { axiosGet } from '@/utils'
+import products from '@/api/products'
 
 export default {
   namespaced: true,
@@ -62,7 +62,7 @@ export default {
   actions: {
     async fetchProducts ({ commit }, { category = null, limit = 3, offset = 0 }) {
       commit('updateProductsLoading', true)
-      await axiosGet(`/api/v1/products?${category ? `category_id=${category}&` : ''}limit=${limit}&offset=${offset}`)
+      await products.getProducts(category, limit, offset)
         .then(({ data }) => {
           commit('updateProducts', data)
         })
