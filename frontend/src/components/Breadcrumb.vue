@@ -2,8 +2,16 @@
   <div id="breadcrumb">
     <el-container>
       <el-breadcrumb separator="/">
-        <el-breadcrumb-item :to="{ path: '/' }"><i class="el-icon-s-home"></i> Home</el-breadcrumb-item>
-<!--        <el-breadcrumb-item><a href="/">category</a></el-breadcrumb-item>-->
+        <el-breadcrumb-item :to="{ path: '/' }">
+          <i class="el-icon-s-home"></i>
+          Home
+        </el-breadcrumb-item>
+
+        <el-breadcrumb-item v-if="this.$route.name === 'Category'"
+                            :to="{ path: `/${this.$route.params.category_code}` }"
+        >
+          {{ this.$route.params.category_code }}
+        </el-breadcrumb-item>
       </el-breadcrumb>
     </el-container>
   </div>
