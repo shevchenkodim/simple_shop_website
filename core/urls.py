@@ -8,8 +8,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', TemplateView.as_view(template_name="index.html")),
     path('api/v1/', include('shop_api.urls')),
+    path('', TemplateView.as_view(template_name="index.html")),
 ]
 
 if settings.DEBUG:

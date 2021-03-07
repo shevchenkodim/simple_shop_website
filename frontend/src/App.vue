@@ -1,32 +1,85 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+
+    <Navbar/>
+
+    <Breadcrumb/>
+
+    <div id="content-main">
+      <router-view></router-view>
     </div>
-    <router-view/>
   </div>
 </template>
 
+<script>
+import Navbar from '@/components/Navbar'
+import Breadcrumb from '@/components/Breadcrumb'
+
+export default {
+  components: { Navbar, Breadcrumb }
+}
+</script>
+
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  padding: 0px;
+  margin: 0px;
 }
 
-#nav {
-  padding: 30px;
+body {
+  padding: 0px;
+  margin: 0px;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+#content-main {
+  padding: 20px;
+  padding-right: 40px;
+  padding-left: 40px;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+.padding-left {
+  padding-left: 50px;
+}
+
+.padding-right {
+  padding-right: 50px;
+}
+
+.padding-pagination {
+  padding: 20px 20px;
+}
+
+#card-category {
+  max-height: 200px;
+}
+
+.time {
+  font-size: 13px;
+  color: #999;
+}
+
+.bottom {
+  margin-top: 13px;
+  line-height: 12px;
+}
+
+.button {
+  padding: 0;
+  float: right;
+}
+
+.image {
+  width: 100%;
+  display: block;
+}
+
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    content: "";
+}
+
+.clearfix:after {
+    clear: both
 }
 </style>

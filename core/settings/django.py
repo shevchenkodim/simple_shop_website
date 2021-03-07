@@ -24,7 +24,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'common',
+
+    'django_filters',
     'webpack_loader',
+    'django_cleanup',
 ]
 
 MIDDLEWARE = [
